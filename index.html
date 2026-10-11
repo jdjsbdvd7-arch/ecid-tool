@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ECID Tool — Hex / Decimal / UDID</title>
+  <meta name="description" content="Original client-side Apple ECID converter: decimal, hex, and modern UDID parsing." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <h1>ECID Tool</h1>
+      <p class="tagline">Convert Apple ECID between decimal and hex, or parse a modern device UDID.</p>
+      <p class="note-ar" dir="rtl">أداة أصلية تعمل في المتصفح فقط — بدون اتصال بالجهاز.</p>
+    </header>
+
+    <section class="card">
+      <label for="input">Paste ECID or UDID</label>
+      <textarea id="input" rows="3" spellcheck="false" placeholder="Examples:&#10;1234567890123456&#10;0x1122334455667788&#10;00008110-001A2B3C4D5E6F70"></textarea>
+      <div class="actions">
+        <button type="button" id="convert">Convert</button>
+        <button type="button" id="clear" class="ghost">Clear</button>
+      </div>
+      <p id="error" class="error" hidden></p>
+    </section>
+
+    <section class="card results" id="results" hidden>
+      <h2>Result</h2>
+      <dl>
+        <div>
+          <dt>Decimal</dt>
+          <dd><code id="out-dec"></code><button type="button" class="copy" data-copy="out-dec">Copy</button></dd>
+        </div>
+        <div>
+          <dt>Hex</dt>
+          <dd><code id="out-hex"></code><button type="button" class="copy" data-copy="out-hex">Copy</button></dd>
+        </div>
+        <div>
+          <dt>Hex (0x)</dt>
+          <dd><code id="out-hex0x"></code><button type="button" class="copy" data-copy="out-hex0x">Copy</button></dd>
+        </div>
+        <div id="cpid-row" hidden>
+          <dt>CPID</dt>
+          <dd><code id="out-cpid"></code><button type="button" class="copy" data-copy="out-cpid">Copy</button></dd>
+        </div>
+        <div id="udid-row" hidden>
+          <dt>UDID parts</dt>
+          <dd><code id="out-udid"></code></dd>
+        </div>
+      </dl>
+    </section>
+
+    <footer>
+      <p>Original static tool. No accounts, no uploads, no device pairing.</p>
+      <p><a href="https://github.com/jdjsbdvd7-arch/ecid-tool">Source on GitHub</a></p>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
